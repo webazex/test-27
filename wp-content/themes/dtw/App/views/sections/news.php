@@ -10,7 +10,12 @@
 
                 </div>
                 <div class="content-news__grid-news-posts">
-
+                    <a class="grid-news-posts__item" href="">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
