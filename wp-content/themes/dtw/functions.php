@@ -1,1 +1,7 @@
 <?php
+//autoload App classes
+require_once get_template_directory().'/App/autoload.php';
+//load css & js
+require_once get_template_directory(). '/App/inc/source.php';
+//register menu
+require_once get_template_directory(). '/App/inc/menu.php';
