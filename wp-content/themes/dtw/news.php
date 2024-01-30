@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+use Webazex\App\Core\Page\Page as Page;
+$newsCats = getNewsCats();
+get_header();
+?>
     <main>
         <section>
             <div class="site-size">
@@ -7,6 +11,11 @@
                         <span> <?php _e('Новини', 'dwt');?></span>
                     </h1>
                 </div>
+                <?php Page::section('news', [
+                    'title' => __('Новини', 'dwt'),
+                    'cats' => $newsCats,
+                    'posts' => getAllNews()
+                ]);?>
             </div>
         </section>
 

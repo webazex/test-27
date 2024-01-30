@@ -43,9 +43,14 @@ function registerCustomPostType()
                 'show_admin_column' => true,
                 'rest' => true,
             ],
+        ], [
+            'name' => __('Без категорій', 'dwt'),
+            'slug' => 'uncategorized-news',
+            'desc' => __('Тут заходяться ті новини яким не було присвоєно жодної категорії', 'dwt')
         ]
     );
     flush_rewrite_rules();
 };
 
-add_action('init', 'registerCustomPostType');
+registerCustomPostType();
+//add_action('init', 'registerCustomPostType');

@@ -32,3 +32,21 @@ function __fetchObj($obj){
     }
     return $ret;
 }
+
+function getNewsCats(){
+    $terms = get_terms([
+        'taxonomy' => 'news-category'
+    ]);
+    $ret = [];
+    if(!is_wp_error($terms) AND !empty($terms)){
+        foreach ($terms as $termObj){
+            $ret[$termObj->term_id] = [
+                'id' => $termObj->term_id,
+                'name' => $termObj->name,
+                'count' => $termObj->count,
+            ];
+        }
+    }
+    return $ret;
+}
+
