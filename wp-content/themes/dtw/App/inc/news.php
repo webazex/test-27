@@ -16,7 +16,27 @@ function getAllNews() {
  */
 function getNews(array $idCats, int $postsCount = 0):array
 {
-    $ret = [];
-    $count = ($postsCount === 0)? get_options('posts_per_page') : $postsCount;
-    return $ret;
+    $count = ($postsCount === 0)? get_option('posts_per_page') : $postsCount;
+    $args = [
+        'posts_per_page' => $count,
+        'post_type' => 'news',
+    ];
+    if(!empty($idCats)){
+        $terms = [];
+        foreach ($idCats as $idCat){
+            $terms[] = intval($idCat);
+        }
+        $taxQuery = [
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'news-category',
+                'field'    => 'id',
+                'terms'    => $terms,
+            ]
+        ];
+        //set in wp_query params
+        $args['tax_query'] = $taxQuery;
+    }
+    $obj = new WP_Query($args);
+    return __fetchObj($obj);
 }
