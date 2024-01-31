@@ -52,5 +52,5 @@ function registerCustomPostType()
     flush_rewrite_rules();
 };
 
-registerCustomPostType();
-//add_action('init', 'registerCustomPostType');
+//registerCustomPostType();
+add_action('init', 'registerCustomPostType');
