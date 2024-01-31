@@ -14,8 +14,11 @@
                 <?php if(!empty($args['cats'])):?>
                 <div class="content-news__filter-news">
                     <form action="" method="post" id="filter" class="filter">
-                        <?php foreach ($args['cats'] as $catItem):?>
-                        <label></label>
+                        <?php foreach ($args['cats'] as $catItem): var_dump($catItem);?>
+                        <label>
+                            <span></span>
+                            <input type="checkbox" name="cats[]" id="">
+                        </label>
                         <?php endforeach;?>
                     </form>
                 </div>

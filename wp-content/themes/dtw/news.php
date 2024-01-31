@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: Новини
+*/
 use Webazex\App\Core\Page\Page as Page;
 $newsCats = getNewsCats();
 get_header();
