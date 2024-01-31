@@ -13,3 +13,5 @@ require_once get_template_directory(). '/App/inc/ajax.php';
 require_once get_template_directory(). '/App/inc/helpers.php';
 //news
 require_once get_template_directory(). '/App/inc/news.php';
+//supports
+require_once get_template_directory(). '/App/inc/supports.php';
