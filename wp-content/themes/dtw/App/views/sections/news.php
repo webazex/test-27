@@ -15,28 +15,126 @@
                     <form action="" method="post" id="filter" class="filter">
                         <?php foreach ($args['cats'] as $catItem): ?>
                         <label for="<?php echo $catItem['id'];?>" class="filter__item">
-                            <span><?php echo $catItem['name'];?></span>
                             <input type="checkbox" name="cats[]" id="<?php echo $catItem['id'];?>">
+                            <span><?php echo $catItem['name'];?></span>
                         </label>
                         <?php endforeach;?>
                         <div class="filter__btns-row">
                             <button type="reset">
-                                <span><?php __('Очистити', 'dwt');?></span>
+                                <span><?php _e('Очистити', 'dwt');?></span>
                             </button>
                             <button type="submit">
-                                <span><?php __('Відправити', 'dwt');?></span>
+                                <span><?php _e('Відправити', 'dwt');?></span>
                             </button>
                         </div>
                     </form>
                 </div>
                 <?php endif;?>
                 <div class="content-news__grid-news-posts">
-                    <a class="grid-news-posts__item" href="">
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
                         <div class="item__img-container">
                             <img src="" class="img-container__img" alt="">
                             <span class="item__news-title"></span>
                         </div>
                     </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+                    <a class="grid-news-posts__item" href="" style="width: 100%; height: 100%; background-color: grey;">
+                        <div class="item__img-container">
+                            <img src="" class="img-container__img" alt="">
+                            <span class="item__news-title"></span>
+                        </div>
+                    </a>
+
+
                 </div>
             </div>
             <?php else:?>

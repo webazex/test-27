@@ -283,3 +283,88 @@ section.welcome {
     align-items: center;
 }
 .news-section__content-news-none > h3 {text-align: center;}
+.news-section__content-news {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.content-news__filter-news {
+    max-width: 300px;
+    width: 100%;
+    margin-right: 10px;
+}
+.content-news__filter-news form.filter {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+'. .'
+'. .'
+'btns btns';
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+}
+.filter__item {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    background-color: lightgrey;
+}
+.filter__item input[type='checkbox'] {
+    margin-right: 10px;
+}
+.filter__btns-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: btns;
+    padding: 10px 0;
+    background-color: lightgrey;
+}
+.filter__btns-row > button {
+    width: auto;
+    height: 25px;
+    display: flex;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    outline: transparent;
+    cursor: pointer;
+    border: none;
+}
+.filter__btns-row > button > span {
+    font-weight: 400;
+}
+.filter__btns-row > button[type='submit'] > span {
+    color: green;
+    border-bottom: 1px solid green;
+}
+.filter__btns-row > button[type='reset'] > span {
+    color: red;
+    border-bottom: 1px solid red;
+}
+.content-news__grid-news-posts {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 280px));
+    grid-row-gap: 10px;
+    justify-content: space-between;
+}
+@media  (max-width: 640px) {
+    .news-section__content-news {
+        flex-direction: column;
+    }
+    .content-news__filter-news {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .content-news__filter-news {
+        max-width: unset;
+    }
+}
