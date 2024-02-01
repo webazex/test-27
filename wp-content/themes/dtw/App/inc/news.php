@@ -1,11 +1,38 @@
 <?php
-function getAllNews() {
-    
-    $obj = new WP_Query([
-        'posts_per_page' => -1,
+
+function __getPagination($maxPage, $currentPage = 1){
+    $html = '<div class="wbzx-pagination">';
+
+    $html .= '<div class="prev-arr" data-max-page="1"><span><</span></div>';
+    for($i = 1; $i <= $maxPage; $i++){
+        $class = ($i == $currentPage)? 'current' : '';
+        $html .= '<div class="wbzx-pagination__item '.$class.'" data-page="'.$i.'"><span>'.$i.'</span></div>';
+    }
+    $html .= '<div class="next-arr" data-max-page="'.$maxPage.'"><span>></span></div>';
+
+    $html .= '</div>';
+    return $html;
+}
+
+function getPagination($maxPage, $currentPage = 1){
+    echo __getPagination($maxPage, $currentPage);
+}
+function getAllNews($count = 0, $page = 1) {
+    $p = (intval($count) === 0)? get_option('posts_per_page') : $count;
+    $args = [
+        'posts_per_page' => $p,
         'post_type' => 'news',
-    ]);
-    return __fetchObj($obj);
+    ];
+    if(is_front_page()){
+        $args['page'] = $page;
+    }else{
+        $args['paged'] = $page;
+    }
+    $obj = new WP_Query($args);
+    return [
+        'news' => __fetchObj($obj),
+        'pagination' => __getPagination(intval($obj->max_num_pages), $page),
+    ];
 }
 
 /**
@@ -14,13 +41,18 @@ function getAllNews() {
  * @return array
  *
  */
-function getNews(array $idCats, int $postsCount = 0):array
+function getNews(array $idCats, int $currentPage, int $postsCount = 0):array
 {
     $count = ($postsCount === 0)? get_option('posts_per_page') : $postsCount;
     $args = [
         'posts_per_page' => $count,
         'post_type' => 'news',
     ];
+    if(is_front_page()){
+        $args['page'] = $currentPage;
+    }else{
+        $args['paged'] = $currentPage;
+    }
     if(!empty($idCats)){
         $terms = [];
         foreach ($idCats as $idCat){
@@ -38,5 +70,9 @@ function getNews(array $idCats, int $postsCount = 0):array
         $args['tax_query'] = $taxQuery;
     }
     $obj = new WP_Query($args);
-    return __fetchObj($obj);
+
+    return [
+        'news' => __fetchObj($obj),
+        'pagination' => __getPagination(intval($obj->max_num_pages), $currentPage),
+    ];
 }

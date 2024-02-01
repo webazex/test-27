@@ -287,6 +287,7 @@ section.welcome {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    padding: 20px 0;
 }
 .content-news__filter-news {
     max-width: 300px;
@@ -352,10 +353,98 @@ section.welcome {
 .content-news__grid-news-posts {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 280px));
-    grid-row-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
     justify-content: space-between;
 }
+.grid-news-posts__item {
+    padding: 5px;
+    box-shadow: 0 0 2px 3px #d7d7d7;
+}
+.item__img-container {
+    width: 100%;
+}
+.img-container__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+.item__news-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 0;
+    display: inline-block;
+    color: black;
+}
+.grid-news-posts__item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.grid-news-posts__item > p {
+    margin-top: 5px;
+    color: black;
+    text-decoration: none;
+}
+.grid-news-posts__item > p:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    display: block;
+}
+.pagination-container__pagination-block {
+    width: 100%;
+   display: flex;
+    justify-content: center;
+}
+.wbzx-pagination {
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.news-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.wbzx-pagination__item {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    color: black;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.wbzx-pagination__item.current {
+    color: white;
+    background-color: black;
+    cursor: default;
+}
+.wbzx-pagination__item:first-child {
+    margin-right: 15px;
+    margin-left: 0;
+}
+.wbzx-pagination__item:last-child {
+    margin-left: 15px;
+    margin-right: 0;
+}
+.prev-arr, .next-arr {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.prev-arr {margin-right: 15px;}
+.next-arr {margin-left: 15px;}
 @media  (max-width: 640px) {
     .news-section__content-news {
         flex-direction: column;
