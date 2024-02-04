@@ -4,16 +4,45 @@ use Webazex\App\Core\Page\Page as Page;
 
 function __getPagination($maxPage, $currentPage = 1)
 {
-    $html = '<div class="wbzx-pagination">';
+    $currentPage = ($currentPage <= $maxPage AND $currentPage >= 1)? $currentPage : $maxPage;
+    $html = '<div class="wbzx-pagination" data-c="'.$currentPage.'">';
+    if($maxPage > 3){
+        if($currentPage > 1){
+            $html .= '<div class="prev-arr" data-max-page="1"><span><</span></div>';
+        }
+        $checkDots = true;
+        for ($i = 1; $i <= $maxPage; $i++) {
+            $class = ($i == $currentPage) ? 'current' : '';
+            if($i > 2 AND ($i <= ($maxPage - 2))){
+                if($checkDots){
+                    $html .= '<div class="wbzx-pagination__dots">
+                    <span class="dots__item-p"></span>
+                    <div class="dots__item-p cp">
+                        <span>'.$currentPage.'</span>
+                    </div>
+                    <span class="dots__item-p"></span>
+                    </div>';
+                    $checkDots = false;
+                }
+            }else{
+                $html .= '<div class="wbzx-pagination__item ' . $class . '" data-page="' . $i . '"><span>' . $i . '</span></div>';
+            }
+        }
+        if($currentPage < $maxPage){
+            $html .= '<div class="next-arr" data-max-page="' . $maxPage . '"><span>></span></div>';
+        }
+        $html .= '</div>';
+    }else {
+        for ($i = 1; $i <= $maxPage; $i++) {
+            $class = ($i == $currentPage) ? 'current' : '';
+            $html .= '<div class="wbzx-pagination__item ' . $class . '" data-page="' . $i . '"><span>' . $i . '</span></div>';
+        }
+        if($currentPage < $maxPage){
+            $html .= '<div class="next-arr" data-max-page="' . $maxPage . '"><span>></span></div>';
+        }
 
-    $html .= '<div class="prev-arr" data-max-page="1"><span><</span></div>';
-    for ($i = 1; $i <= $maxPage; $i++) {
-        $class = ($i == $currentPage) ? 'current' : '';
-        $html .= '<div class="wbzx-pagination__item ' . $class . '" data-page="' . $i . '"><span>' . $i . '</span></div>';
     }
-    $html .= '<div class="next-arr" data-max-page="' . $maxPage . '"><span>></span></div>';
 
-    $html .= '</div>';
     return $html;
 }
 
@@ -28,6 +57,7 @@ function getAllNews($count = 0, $page = 1)
     $args = [
         'posts_per_page' => $p,
         'post_type' => 'news',
+        'post_status' => 'publish'
     ];
     if (is_front_page()) {
         $args['page'] = $page;
@@ -53,6 +83,7 @@ function getNews(array $idCats, int $currentPage, int $postsCount = 0): array
     $args = [
         'posts_per_page' => $count,
         'post_type' => 'news',
+        'post_status' => 'publish'
     ];
     if (is_front_page()) {
         $args['page'] = $currentPage;

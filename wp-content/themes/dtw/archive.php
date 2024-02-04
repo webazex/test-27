@@ -12,8 +12,8 @@ $thisPostType = get_queried_object()->name;
         Page::section('news', [
             'title' => __('Новини', 'dwt'),
             'cats' => $newsCats,
-            'news' => getAllNews(5),
-            'pagination' => getAllNews(5)['pagination'],
+            'news' => getAllNews(),
+            'pagination' => getAllNews()['pagination'],
         ]);
     else:
         Page::section('demo');

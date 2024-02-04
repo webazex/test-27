@@ -52,7 +52,7 @@ header, footer, main, section {
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
-    min-width: 320px;
+    min-width: 260px;
 }
 .default-container-padding {
     padding: 0 30px;
@@ -445,6 +445,37 @@ section.welcome {
 }
 .prev-arr {margin-right: 15px;}
 .next-arr {margin-left: 15px;}
+.wbzx-pagination__dots {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.dots__item-p {
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 3px;
+    display: block;
+    margin: 0 5px;
+}
+.dots__item-p.cp {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: transparent;
+}
+.dots__item-p:first-child {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+.dots__item-p:last-child {
+    margin-left: 5px;
+    margin-right: 0px;
+}
 .news-cats-row__cat-item {
     width: 100%;
     display: grid;
