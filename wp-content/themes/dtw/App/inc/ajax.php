@@ -1,6 +1,13 @@
 <?php
 function callbackNews() {
-    print_r($_POST);
+    if(isset($_POST['cats']) AND !empty($_POST['cats'])){
+        $data = getNews($_POST['cats'], 1);
+        if(!empty($data['news'])){
+            foreach ($data['news'] as $newItem){
+                var_dump($newItem);
+            }
+        }
+    }
     wp_die();
 }
 
