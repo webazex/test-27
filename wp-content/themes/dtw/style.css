@@ -445,6 +445,20 @@ section.welcome {
 }
 .prev-arr {margin-right: 15px;}
 .next-arr {margin-left: 15px;}
+.news-cats-row__cat-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    align-items: center;
+}
+.cat-item__text {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
 @media  (max-width: 640px) {
     .news-section__content-news {
         flex-direction: column;

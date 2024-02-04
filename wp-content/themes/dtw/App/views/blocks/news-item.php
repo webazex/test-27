@@ -8,7 +8,7 @@
     <div class="item__news-cats-row">
         <div class="news-cats-row__cat-item">
             <?php foreach ($args['cats'] as $catItem):?>
-            <span>
+            <span class="cat-item__text">
                 <?php echo $catItem['name'];?>
             </span>
             <?php endforeach;?>
