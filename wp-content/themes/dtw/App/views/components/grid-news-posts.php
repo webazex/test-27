@@ -1,5 +1,5 @@
 <?php use Webazex\App\Core\Page\Page as Page; ?>
-<div class="content-news__grid-news-posts">
+<div class="content-news__grid-news-posts" id="sgnews">
     <?php
         foreach ($args['news'] as $item):
             Page::block('news-item', $item);

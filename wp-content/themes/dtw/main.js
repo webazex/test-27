@@ -12,8 +12,25 @@ $(document).ready(function (){
                 cats: catsArray,
             },
             success: function(data){
-
+                $('#sgnews').html(data);
             }
         });
     });
+
+    $(document).on('reset', '#filter', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: ajaxPatch.url,
+            method: 'post',
+            dataType: 'html',
+            data: {
+                action: 'gnews',
+                cats: 'none',
+            },
+            success: function(data){
+                $('#sgnews').html(data);
+            }
+        });
+    });
+
 });
