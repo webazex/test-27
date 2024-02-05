@@ -466,8 +466,9 @@ section.welcome {
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    background-color: transparent;
+    background-color: black;
 }
+.dots__item-p.cp span {color: white;}
 .dots__item-p:first-child {
     margin-left: 0px;
     margin-right: 5px;
